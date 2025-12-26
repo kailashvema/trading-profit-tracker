@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Trading Profit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>📊 My Trading Profit Tracker</h1>
+
+<!-- Add Transaction -->
+<section>
+    <h2>Add Transaction</h2>
+
+    <form id="transactionForm">
+        <input type="date" id="date" required>
+
+        <input type="text" id="stock" placeholder="Stock Name" required>
+
+        <select id="type" required>
+            <option value="">Select Type</option>
+            <option value="buy">Buy</option>
+            <option value="sell">Sell</option>
+            <option value="dividend">Dividend</option>
+        </select>
+
+        <input type="number" id="quantity" placeholder="Quantity">
+        <input type="number" id="price" placeholder="Price / Amount" required>
+
+        <button type="submit">Add</button>
+    </form>
+</section>
+
+<!-- Transactions -->
+<section>
+    <h2>Transaction History</h2>
+
+    <table>
+        <thead>
+    <tr>
+        <th>Date</th>
+        <th>Stock</th>
+        <th>Type</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>Actions</th>
+    </tr>
+</thead>
+        <tbody id="transactionTable"></tbody>
+    </table>
+</section>
+
+<!-- Summary -->
+<section>
+    <h2>Portfolio Summary</h2>
+
+    <div class="summary">
+        <div class="card">
+            <p>Total Invested</p>
+            <h3>₹<span id="invested">0</span></h3>
+        </div>
+
+        <div class="card">
+            <p>Realized Profit</p>
+            <h3 id="realized" class="neutral">₹0</h3>
+        </div>
+
+        <div class="card">
+            <p>Unrealized Value</p>
+            <h3>₹<span id="unrealized">0</span></h3>
+        </div>
+
+        <div class="card">
+            <p>Dividends</p>
+            <h3 id="dividends" class="profit">₹0</h3>
+        </div>
+
+        <div class="card highlight">
+            <p>Net Profit</p>
+            <h2 id="netProfit" class="neutral">₹0</h2>
+        </div>
+    </div>
+</section>
+<section>
+    <h2>Account Summary (Manual)</h2>
+
+    <!-- Inputs Grid -->
+    <div class="summary-grid">
+        <div class="card">
+            <p>Total Deposited</p>
+            <input type="number" id="totalDeposit">
+        </div>
+
+        <div class="card">
+            <p>Total Withdrawn</p>
+            <input type="number" id="totalWithdraw">
+        </div>
+
+        <div class="card">
+            <p>Paid for Stocks</p>
+            <input type="number" id="paidStocks">
+        </div>
+
+        <div class="card">
+            <p>Received from Stocks</p>
+            <input type="number" id="receivedStocks">
+        </div>
+
+        <div class="card">
+            <p>Current Invested</p>
+            <input type="number" id="currentInvested">
+        </div>
+
+        <div class="card">
+            <p>Brokerage Balance</p>
+            <input type="number" id="brokerageBalance">
+        </div>
+    </div>
+
+    <!-- Result Card -->
+    <div class="result-card">
+        <p>Overall Profit / Loss</p>
+        <h2 id="overallProfit">₹0.00</h2>
+    </div>
+</section>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
